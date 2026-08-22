@@ -13,13 +13,11 @@ workflows:
       events:
         - push
     scripts:
-      - name: Set up local.properties
-        script: |
-          echo "sdk.dir=$ANDROID_SDK_ROOT" > local.properties
       - name: Build Android APK
         script: |
+          cd ArchCalc_Android_Project-2/ArchCalc
           chmod +x gradlew
           ./gradlew assembleDebug
     artifacts:
-      - app/build/outputs/apk/**/*.apk
+      - ArchCalc_Android_Project-2/ArchCalc/app/build/outputs/apk/**/*.apk
       
